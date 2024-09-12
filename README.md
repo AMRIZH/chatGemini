@@ -25,7 +25,7 @@ The **AI Chat Project** is an simple ai chat implementing GEMINI API and Gradio 
 
    ```bash
    git clone https://github.com/AMRIZH/chatGemini.git
-   cd ai-chat-project
+   cd chatGemini
    ```
 
 2. **Create a virtual environment:**
