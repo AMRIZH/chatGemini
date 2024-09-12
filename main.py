@@ -12,10 +12,10 @@ genai.configure(api_key=GOOGLE_API_KEY)
 
 model = genai.GenerativeModel('gemini-1.5-flash')
 
-def generate_content_with_image(prompt, img):
+def generate_content(prompt):
     try:
-      response = model.generate_content(prompt)
-      return response.text
+        response = genai.generate_text(prompt=prompt)  # Correct API call for generating text
+        return response.result if response else "No response"
     except Exception as e:
         return str(e)
 
@@ -25,10 +25,10 @@ output_text = gr.Textbox(lines=4, placeholder="Answer will appear here...")
 
 # Gradio interface
 gr.Interface(
-    fn=generate_content_with_image,
-    inputs=[prompt_input],
+    fn=generate_content,
+    inputs=prompt_input,
     outputs=output_text,
     title="Generative AI Content Generator",
-    description="Enter a prompt and optionally upload an image to generate content using the Generative AI model.",
-# ).launch(share=True) # uncomment this line to share your Gradio app
+    description="Enter a prompt and get a response from the AI model.",
 ).launch()
+
