@@ -42,7 +42,7 @@ The **AI Chat Project** is an simple ai chat implementing GEMINI API and Gradio 
    pip install -r requirements.txt
    ```
 
-4. **Download the NLP model:**
+4. **GET The API key**
 
 - get your own GEMINI API for free [here](https://aistudio.google.com/app/apikey)
 - click on "create API key"
